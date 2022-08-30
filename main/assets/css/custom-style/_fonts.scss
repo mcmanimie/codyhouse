@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'FilsonSoft';
+    font-weight: 400;
+    src:  url('../fonts/FilsonProRegular-Regular.woff') format('woff'),
+          url('../fonts/FilsonProRegular-Regular.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'FilsonSoft';
+    font-weight: 400;
+    font-style: italic;
+    src:  url('../fonts/FilsonProRegularItalic-Italic.woff') format('woff'),
+          url('../fonts/FilsonProRegularItalic-Italic.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'FilsonSoft';
+    font-weight: 700;
+    src:  url('../fonts/FilsonProBold-Bold.woff') format('woff'),
+          url('../fonts/FilsonProBold-Bold.ttf') format('ttf');
+}
+
+@font-face {
+    font-family: 'FilsonSoft';
+    font-weight: 700;
+    font-style: italic;
+    src:  url('../fonts/FilsonProBoldItalic-Italic.woff') format('woff'),
+          url('../fonts/FilsonProBoldItalic-Italic.ttf') format('ttf');
+}

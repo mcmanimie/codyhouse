@@ -1,0 +1,5 @@
+# Redirects from what the browser requests to what we serve
+/home              /
+/youtube           https://www.youtube.com/channel/UCrAf5Wl2Hm6E0eb_HezBZcw
+/tips              https://www.instagram.com/pika3dpen/
+/amz               https://www.amazon.com/PIKA3D-Super-3D-PRINTING-PEN/dp/B09R4MBK1X/

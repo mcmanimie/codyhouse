@@ -1,0 +1,21 @@
+@use '../base' as *;
+@use '_1_accordion.scss' as *;
+
+/* --------------------------------
+
+File#: _2_faq-v2
+Title: Frequent Questions v2
+Descr: Q&A template based on the accordion component
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.accordion[data-animation=on] .accordion__item--is-open .accordion__panel > * {
+  color: #fff;
+}
+
+.accordion__item {
+    border-style: dashed;
+    border-color: #fff;
+    border-bottom-width: var(--accordion-border-width);
+}

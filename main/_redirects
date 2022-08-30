@@ -1,0 +1,8 @@
+# Redirects from what the browser requests to what we serve
+/home              /
+/youtube           https://www.youtube.com/channel/UCrAf5Wl2Hm6E0eb_HezBZcw
+/tips              https://www.instagram.com/pika3dpen/
+/amz               https://amazon.com/pika3d
+/troubleshooting   https://www.youtube.com/channel/UCrAf5Wl2Hm6E0eb_HezBZcw
+/refills           https://www.amazon.com/dp/B09R4M9276
+/reviews           https://www.amazon.com/review/review-your-purchases/

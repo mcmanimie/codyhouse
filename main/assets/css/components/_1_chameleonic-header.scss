@@ -1,0 +1,210 @@
+@use '../base' as *;
+
+/* --------------------------------
+
+File#: _1_chameleonic-header
+Title: Chameleonic Header
+Descr: Header component whose theme adapts on scroll to the underneath section
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.cha-header {
+  background-color: alpha(var(--color-bg), 0.9);
+}
+
+.cha-header__logo {
+  display: block;
+  width: 80%; // logo width
+  @media screen and (max-width: 500px) {
+    width: 70%;
+  }
+}
+
+.cha-header__nav {
+  display: none; // nav visible on bigger screens
+}
+
+.cha-header__link {
+  color: var(--color-contrast-higher);
+  text-decoration: none;
+  transition: opacity .3s;
+  font-weight: bold;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.cha-header__btn {
+  background-color: var(--color-secondary);
+  padding: var(--space-xxs) var(--space-sm);
+  border-radius: 50em;
+  box-shadow: var(--shadow-sm);
+  color: var(--color-white);
+  cursor: pointer;
+  @include fontSmooth;
+  transition: transform .2s, background-color .2s;
+  font-weight: bold;
+
+  &:hover {
+    background-color: lightness(var(--color-secondary), 0.9);
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  &:focus {
+    outline: 2px solid alpha(var(--color-secondary), 0.2);
+    outline-offset: 2px;
+  }
+}
+
+.cha-header__trigger { // control of navigation visible on smaller devices
+  display: block;
+  font-size: 24px; // icon size
+
+  .icon {
+    display: block;
+  }
+}
+
+// modal (navigation visible on smaller screens)
+.cha-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-bg);
+  display: none;
+}
+
+.cha-modal__close {
+  display: block;
+  font-size: 24px; // icon size
+
+  .icon {
+    display: block;
+  }
+}
+
+.cha-modal__link {
+  font-size: var(--text-xl);
+  color: var(--color-contrast-higher);
+  text-decoration: underline;
+}
+
+.cha-header {
+  background: alpha(var(--color-black), .9) !important;
+  .cha-header__link { color: #fff !important; }
+
+}
+
+.cha-header__trigger { color: #fff; }
+
+.theme-opaque {
+  .cha-header__trigger { color: #333; }
+  .cha-header {
+    background: rgba(255,255,255,.5) !important;
+    border-bottom: solid 1px #eee;
+
+    @media screen and (max-width: 1028px) {
+      background: rgba(255,255,255,1) !important;
+    }
+
+
+  }
+  .cha-header__link { color: #333 !important; }
+  .cha-header__logo .stpika {
+    fill: var(--color-primary);
+  }
+  .cha-header__btn {
+    background-color: var(--color-secondary);
+    &:hover {
+      background-color: lightness(var(--color-secondary), 0.9);
+    }
+  }
+}
+
+.theme-yellow {
+  .cha-header__trigger { color: #fff; }
+  .cha-header {
+    background: alpha(var(--color-secondary), .9);
+  }
+  .cha-header__link { color: #fff; }
+  .cha-header__logo .stpika {
+    fill: var(--color-secondary);
+  }
+  .cha-header__btn {
+    background-color: var(--color-tertiary);
+    &:hover {
+      background-color: lightness(var(--color-tertiary), 0.9);
+    }
+  }
+}
+
+.theme-white {
+  .cha-header__trigger { color: #fff; }
+  .cha-header {
+    background: alpha(var(--color-black), .9);
+  }
+  .cha-header__link { color: #fff; }
+  .cha-header__logo .stpika {
+    fill: var(--color-accent);
+  }
+  .cha-header__btn {
+    background-color: var(--color-primary);
+    &:hover {
+      background-color: lightness(var(--color-primary), 0.9);
+    }
+  }
+}
+
+
+@include breakpoint(md) {
+  .cha-header__nav {
+    display: block;
+  }
+
+  .cha-header__trigger, .cha-modal {
+    display: none !important;
+  }
+}
+
+// accessibility
+.js { // clipping effect
+  .cha-header-clip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // hide .cha-header when outside its parent
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  .cha-header {
+    pointer-events: auto;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+}
+
+html:not(.js) {
+  .cha-header__trigger {
+    display: none;
+  }
+
+  .cha-header__nav {
+    display: block;
+  }
+}
